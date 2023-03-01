@@ -6,6 +6,8 @@
     <title>OCCULT</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/css/swiper.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
@@ -159,8 +161,8 @@
             <div class="carousel-caption">
               <img src="img/logo.svg" alt="Logo" class="img-fluid" width="220px">
               <!-- <h1 class="mb-4" data-aos="fade-right" data-aos-duration="500">Group <span class="text-highlight-danger">bossing</span> events</h1> -->
-              <p class="my-4">Joining our clan provides access to experienced players who can offer advice, tips, and strategies to improve your gameplay. You can learn from their expertise and improve your own skills through their guidance.</p>
-              <a href="https://discord.gg/PmSfAJHa" target="_blank" class="btn btn-primary" data-aos="zoom-in" data-aos-delay="500"><i class="fa-brands fa-discord me-3"></i> Join us on discord</a>
+              <p class="my-4">Joining our clan provides access to experienced players who can offer advice, tips, and strategies to improve your gameplay. You can learn from their <span class="text-highlight-warning">expertise</span> and improve your own skills through their guidance.</p>
+              <a href="https://discord.gg/PmSfAJHa" target="_blank" class="btn btn-primary"><i class="fa-brands fa-discord me-3"></i> Join us on discord</a>
             </div>
           </div>
           <div class="carousel-item">
@@ -194,9 +196,36 @@
           <span class="visually-hidden">Next</span>
         </button>
       </div>
+      <div id="app" class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="swiper-container">
+              <p class="swiper-control">
+                <button type="button" class="btn btn-default btn-sm prev-slide">Prev</button>
+                <button type="button" class="btn btn-default btn-sm next-slide">Next</button>
+              </p>
+              <div class="swiper-wrapper timeline">
+                <div class="swiper-slide" v-for="item in steps">
+                  <div class="timestamp">
+                    <span class="date">{{item.dateLabel}}<span>
+                  </div>
+                  <div class="status">
+                    <span>{{item.title}}</span>
+                  </div>
+                </div>
+              </div>
+              <!-- Add Pagination -->
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+        </div>
+      </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://kit.fontawesome.com/11d48b2a55.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/js/swiper.min.js"></script>
+    <script src="js/scripts.js"></script>
     <script>
         AOS.init();
     </script>
