@@ -67,9 +67,10 @@ h1, h2, h3, h4, h5 {
     border-bottom: unset;
     opacity: .5;
     transition: opacity .6s ease;
-    min-width: 220px;
+    /* min-width: 220px; */
     text-align: left;
     padding: 8px 0px;
+    padding-right: 20px;
     /* padding-top: 10px; */
 }
 .carousel-indicators [data-bs-target].active {
@@ -137,4 +138,10 @@ h1, h2, h3, h4, h5 {
 #logo-text.show {
     opacity: 1;
     transition: all ease .3s;
+}
+
+@media screen and (max-width: 726px) {
+    .carousel-caption {
+        left: 15%;
+    }
 }
