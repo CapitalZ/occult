@@ -3,7 +3,7 @@
 body {
     font-family: 'Rubik', sans-serif;
 }
-h1, h2, h3, h4, h5 {
+h1 {
     font-family: 'Pacifico', cursive;
 }
 /* Buttons */
@@ -30,9 +30,10 @@ h1, h2, h3, h4, h5 {
     border-color: #450658;
 
 }
-.btn-check:checked+.btn, .btn.active, .btn.show, .btn:first-child:active, :not(.btn-check)+.btn:active {
-    /* background-color: #67277B; */
-    /* border-color: #fff; */
+.btn-primary:active {
+    background-color: #67277B !important;
+    border-color: #e3e3e3 !important;
+    color: #e3e3e3 !important;
 }
 .btn-primary:hover {
     background-color: #67277B;
@@ -70,12 +71,41 @@ h1, h2, h3, h4, h5 {
     transition: opacity .6s ease;
     /* min-width: 220px; */
     text-align: left;
-    padding: 8px 0px;
-    padding-right: 20px;
+    padding: 8px 12px;
     /* padding-top: 10px; */
+    position: relative;
+    text-align: center;
 }
 .carousel-indicators [data-bs-target].active {
     opacity: 1;
+}
+.carousel-indicators [data-bs-target]:first-of-type {
+    text-align-last: left;
+}
+.carousel-indicators [data-bs-target]:first-of-type::after {
+    content: '';
+    position: absolute;
+    top: -7px;
+    left: -12px;
+    width: 12px;
+    height: 12px;
+    background: #fff;
+    display: block;
+    transform: rotate(45deg);
+}
+.carousel-indicators [data-bs-target]:last-of-type {
+    text-align: right;
+}
+.carousel-indicators [data-bs-target]:last-of-type::after {
+    content: '';
+    position: absolute;
+    top: -7px;
+    right: -12px;
+    width: 12px;
+    height: 12px;
+    background: #fff;
+    display: block;
+    transform: rotate(45deg);
 }
 .carousel-caption {
     position: absolute;
@@ -105,6 +135,16 @@ h1, h2, h3, h4, h5 {
 }
 .carousel-control-next-icon {
     background-image: url("data:image/svg+xml,%3Csvg width='668' height='478' viewBox='0 0 668 478' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_5_26)'%3E%3Cpath d='M567.447 193.623L243.5 193.622L259.094 284.377L567.447 284.377L652 239L567.447 193.623ZM38.9928 193.622L38.9928 284.377H81.2692L91.8383 261.689H165.822L186.96 329.755L243.5 329.755L214 148.245L186.96 148.245L165.822 216.311L91.8383 216.311L81.2692 193.622L38.9928 193.622Z' fill='white'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_5_26'%3E%3Crect width='668' height='478' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
+}
+
+/* FAQ */
+.faq-section {
+    background-color: #1A1A1A;
+    padding-top: 90px;
+    padding-bottom: 120px;
+}
+.faq-section {
+    color: #fff;
 }
 
 /* Helpers */
@@ -146,73 +186,17 @@ h1, h2, h3, h4, h5 {
 }
 
 /* Slider */
-.timeline {
-    margin: 50px 0;
-    list-style-type: none;
-    display: flex;
-    padding: 0;
-    text-align: center;
-  }
-  .timeline li {
-    transition: all 200ms ease-in;
-  }
-  .timestamp {
-    width: 200px;
-    margin-bottom: 20px;
-    padding: 0px 40px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-weight: 100; 
-  }
-  .status {
-    padding: 0px 40px;
-    display: flex;
-    justify-content: center;
-    border-top: 4px solid #3e70ff;
-    position: relative;
-    transition: all 200ms ease-in ;
-  }
-    
-  .status span {
-    font-weight: 600;
-    padding-top: 20px;
-  }
-  .status span:before {
-    content: '';
-    width: 25px;
-    height: 25px;
-    background-color: #e8eeff;
-    border-radius: 25px;
-    border: 4px solid #3e70ff;
-    position: absolute;
-    top: -15px;
-    left: 42%;
-    transition: all 200ms ease-in;
-  }
-  .swiper-control {
-    text-align: right;
-  }
-  
-  .swiper-container {
-    width: 100%;
-    height: 250px;
-    margin: 50px 0;
-    overflow: hidden;
-    padding: 0 20px 30px 20px;
-  }
-  .swiper-slide {
-    width: 200px;
-    text-align: center;
-    font-size: 18px;
-  }
-  .swiper-slide:nth-child(2n) {
-    width: 40%;
-  }
-  .swiper-slide:nth-child(3n) {
-    width: 20%;
-  }
+.swiper {
+    width: 600px;
+    height: 300px;
+}
 
+
+@media screen and (min-width: 726px) {
+    .carousel-indicators [data-bs-target] {
+        min-width: 176px;
+    }
+}
 @media screen and (max-width: 726px) {
     .carousel-caption {
         left: 15%;
